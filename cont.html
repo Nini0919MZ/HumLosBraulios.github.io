@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creditos</title>
+  <link rel="icon" href="v.png" type="image/x-icon">
+
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      overflow: hidden; /* Oculta cualquier contenido fuera de la pantalla */
+    }
+
+    .scroll-container {
+      position: relative;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+    }
+
+    .scroll-text {
+      position: absolute;
+      bottom: -160%; /* Comienza fuera de la pantalla */
+      width: 100%;
+      text-align: center;
+      font-size: 1.5rem;
+      animation: scroll-up 25s linear forwards; /* Animación para desplazarse */
+    }
+
+    @keyframes scroll-up {
+      0% {
+        bottom: -160%;
+      }
+      100% {
+        bottom: 160%;
+      }
+    }
+
+    .btn-glitch-fill {
+      display: none; /* Inicialmente oculto */
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px 20px;
+      background-color: #ff0000;
+      color: white;
+      font-size: 1.2rem;
+      text-decoration: none;
+      border-radius: 5px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      text-align: center;
+    }
+
+    .btn-glitch-fill:hover {
+      background-color: #dddddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="scroll-container">
+    <div class="scroll-text">
+      <p>A continuación, se presentan los responsables de la elaboración del programa junto con sus respectivas contribuciones.</p>
+      <br><br><br>
+      <p>ELABORADO POR:</p>
+      <br><br>
+      <p>Nelson Alberto Carranza Puente</p>
+      <p>Planteamiento de la información, desarrollo de un mini menú, organización del equipo y documentación del progreso del proyecto.</p>
+      <br><br>
+      <p>Yosgard Said Gonzalez Mendoza</p>
+      <p>Diseñador de paginas "Eternidad y mortalidad" y "Emanipacion y utopia", mejoracion de menu interactivo y diseñador de creditos</p>
+      <br><br>
+      <p>Jesus Homero Guadian Leal</p>
+      <br><br>
+      <p>Programador de ambas paginas junto a su información.</p>
+      <br><br>
+      <p>Jonathan Alejandro Jimenez Franco</p>
+      <br><br>
+      <p>Desarrollador de menú principal.</p>
+      <br><br>
+      <p>MUCHAS GRACIAS POR SU ATENCION</p>
+      <p>Agradezco sinceramente su atención y el tiempo dedicado a revisar este trabajo. Cada detalle ha sido elaborado con dedicación y esmero, con el objetivo de ofrecer un resultado de calidad que refleje el esfuerzo y compromiso invertidos en cada etapa del proceso. Espero que sea de su agrado y cumpla con las expectativas esperadas. ¡Muchas gracias!</p>
+    </div>
+  </div>
+
+  <!-- Botón que se mostrará al final de la animación -->
+  <a class="btn-glitch-fill" href="index.html">
+      <span class="text">VOLVER A MENU</span>
+  </a>
+
+  <footer>
+    <div class="radio-container">
+      <!-- El botón ya está visible al final -->
+    </div>
+  </footer>
+
+  <script>
+    // Cuando la animación termine, muestra el botón "VOLVER A CASA"
+    const scrollText = document.querySelector('.scroll-text');
+    const returnButton = document.querySelector('.btn-glitch-fill');
+
+    scrollText.addEventListener('animationend', () => {
+      returnButton.style.display = 'block'; // Muestra el botón
+    });
+  </script>
+</body>
+</html>

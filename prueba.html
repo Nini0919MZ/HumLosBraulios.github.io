@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Desplegable</title>
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        /* Estilos del contenedor */
+        .menu-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 250px;
+            background-color: #222;
+            color: #fff;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            transform: translateX(-100%);
+            transition: transform 0.4s ease;
+        }
+
+        /* Checkbox para controlar la apertura */
+        #toggle-menu {
+            display: none;
+        }
+
+        /* Estilos para el botón */
+        .menu-label {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 1000;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            background-color: #222;
+        }
+
+        .menu-label::before,
+        .menu-label::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 2px;
+            background-color: white;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+        /* Línea superior */
+        .menu-label::before {
+            transform: translateY(-6px);
+        }
+
+        /* Línea inferior */
+        .menu-label::after {
+            transform: translateY(6px);
+        }
+
+        /* Cambiar a "X" cuando el menú esté abierto */
+        #toggle-menu:checked + .menu-label::before {
+            transform: rotate(45deg);
+        }
+
+        #toggle-menu:checked + .menu-label::after {
+            transform: rotate(-45deg);
+        }
+
+        #toggle-menu:checked + .menu-label {
+            background-color: #444;
+        }
+
+        /* Mostrar el menú cuando el checkbox está activo */
+        #toggle-menu:checked ~ .menu-container {
+            transform: translateX(0);
+        }
+
+        /* Contenido del menú */
+        .menu {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu li {
+            margin: 20px 0;
+        }
+
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1em;
+            display: block;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .menu a:hover {
+            background-color: #aca7a796;
+        }
+    </style>
+</head>
+<body>
+    <!-- Checkbox para controlar el menú -->
+    <input type="checkbox" id="toggle-menu">
+
+    <!-- Etiqueta para el botón -->
+    <label for="toggle-menu" class="menu-label"></label>
+
+    <!-- Menú lateral -->
+    <div class="menu-container">
+        <br>
+        <br>
+        <br>
+        <h2>Menú</h2>
+        <ul class="menu">
+            <li><a href="#">Hoy</a></li>
+            <li><a href="#">Ayer</a></li>
+            <li><a href="#">Últimos 7 días</a></li>
+            <li><a href="#">Últimos 30 días</a></li>
+            <li><a href="#">Configuración</a></li>
+        </ul>
+    </div>
+</body>
+</html>

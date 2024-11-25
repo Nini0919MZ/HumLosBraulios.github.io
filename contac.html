@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .contact-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin-bottom: 30px;
+      font-size: 1.2rem;
+    }
+
+    .contact-form {
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .contact-form input[type="submit"] {
+      background-color: #00bfff;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .contact-form input[type="submit"]:hover {
+      background-color: #008acb;
+    }
+
+    footer {
+      margin-top: 20px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="contact-container">
+    <h1>Contacto</h1>
+    <p>Si tienes alguna pregunta o deseas ponerte en contacto con nosotros, completa el siguiente formulario:</p>
+    <form class="contact-form">
+      <input type="text" name="name" placeholder="Tu nombre" required>
+      <input type="email" name="email" placeholder="Tu correo electrónico" required>
+      <textarea name="message" placeholder="Escribe tu mensaje aquí..." rows="5" required></textarea>
+      <input type="submit" value="Enviar">
+    </form>
+    <footer>
+      <p>También puedes escribirnos a: <a href="mailto:contacto@ejemplo.com" style="color: #00bfff;">contacto@ejemplo.com</a></p>
+    </footer>
+  </div>
+</body>
+</html>
