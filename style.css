@@ -137,9 +137,9 @@ header a{
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #eee4;
+    background-color: rgb(0, 0, 0);
     border: none;
-    color: #fff;
+    color: #ffffff;
     font-family: monospace;
     font-weight: bold;
     transition: .5s;
