@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sugerencias y contacto</title>
+  <link rel="icon" href="v.png" type="image/x-icon">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #96ff7f;
+      color: rgb(0, 0, 0);
+      font-family: Arial, sans-serif;
+    }
+
+    .contact-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .contact-form input[type="submit"] {
+      background-color: #00bfff;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .contact-form input[type="submit"]:hover {
+      background-color: #008acb;
+    }
+
+    footer {
+      margin-top: 20px;
+      font-size: 0.9rem;
+    }
+
+    .radio-container {
+      text-align: center;
+    }
+
+    .btn-glitch-fill {
+      display: inline-block;
+      font-family: "VT323", monospace;
+      border: 1px solid rgb(0, 0, 0);
+      color: rgb(0, 0, 0);
+      padding: 10px 13px;
+      min-width: 175px;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 15px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-glitch-fill:hover {
+      background-color: rgb(21, 255, 0);
+      color: #000;
+      border: 1px solid rgb(7, 194, 32);
+      animation: glitch 0.2s;
+    }
+
+    @keyframes glitch {
+      25% {
+        background-color: rgb(0, 255, 76);
+        transform: translateX(-10px);
+        letter-spacing: 2px;
+      }
+      50% {
+        transform: translateX(10px);
+      }
+      75% {
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+  </style>
+
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("Uu_RXXcsDbDDcW7Qb"); // Reemplaza TU_USER_ID con tu User ID de EmailJS
+    })();
+
+    function sendEmail(event) {
+      event.preventDefault(); // Evita que el formulario recargue la página
+
+      const form = document.querySelector('.contact-form');
+      emailjs.sendForm('service_acebmg3', 'template_a0ovo34', form)
+        .then(() => {
+          alert("Correo enviado exitosamente.");
+          form.reset(); // Resetea el formulario después de enviar
+        })
+        .catch((error) => {
+          alert("Error al enviar el correo. Intenta nuevamente.");
+          console.error(error);
+        });
+    }
+  </script>
+</head>
+<body>
+  <div class="contact-container">
+    <h1>Sugerencias y Contacto</h1>
+    <p>Si tienes alguna pregunta o deseas ponerte en contacto con nosotros, completa el siguiente formulario:</p>
+    <form class="contact-form" onsubmit="sendEmail(event)">
+      <input type="text" name="user_name" placeholder="Tu nombre" required>
+      <input type="email" name="user_email" placeholder="Tu correo electrónico" required>
+      <textarea name="message" placeholder="Escribe tu mensaje aquí..." rows="5" required></textarea>
+      <input type="submit" value="Enviar">
+    </form>
+
+    <footer>
+      <p>También puedes escribirnos a: 
+        <a href="mailto:humanidadesaprende@gmail.com" style="color: #00bfff;">humanidadesaprende@gmail.com</a>
+      </p>
+      <div class="radio-container">
+        <a class="btn-glitch-fill" href="index.html">
+            <span class="text">VOLVER A CASA</span>
+        </a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
